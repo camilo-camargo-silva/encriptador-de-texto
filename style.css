@@ -91,14 +91,3 @@ header, footer{
     align-self: center;
   }
 }
-@media screen and (max-width: 400px) {
-  #img-copy {
-    display: none;
-  }
-  #input-text {
-    height: 90%;
-  }
-  #output-text {
-    min-height: 1em;
-  }
-}
