@@ -39,6 +39,7 @@ header, footer{
   min-width: 400px;
 }
 .input {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -63,8 +64,9 @@ header, footer{
   font-size: 1.5em;
 }
 #img-copy {
-  display: block;
-  float: right;
+ position: absolute;
+ top: 25px;
+ right: 25px;
 }
 .buttons {
   width: 100%;
@@ -85,7 +87,6 @@ header, footer{
   .input, .output {
     width: 80vw;
     min-width: auto;
-    padding: 1em;
   }
   .buttons {
     align-self: center;

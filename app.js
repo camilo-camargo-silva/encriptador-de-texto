@@ -1,5 +1,4 @@
 let textArea = document.getElementById('input-text');
-let output = document.getElementById('output-text');
 let copy = document.getElementById('img-copy');
 let encryptor = document.getElementsByClassName('btn')[0];
 let descrytor = document.getElementsByClassName('btn')[1];
@@ -9,19 +8,18 @@ encryptor.addEventListener('click', () => {
   let regex = /^[a-z\s]+$/;
   if (regex.test(content)) encrypt(content);
   else alert('lee las normas')
-  textArea.value = '';
 });
 descrytor.addEventListener('click', descryt)
 
 copy.addEventListener('click', () => {
     try {
-      navigator.clipboard.writeText(output.textContent);
+      navigator.clipboard.writeText(textArea.textContent);
       alert('Contenido copiado al portapapeles');
     } catch (err) {
       alert('Error al copiar, la función no está permitida en navegador móvil.');
       return;
     }
-  output.innerText = '';
+  textArea.innerText = '';
 })
 
 function encrypt(text) {
@@ -38,7 +36,7 @@ function encrypt(text) {
     }
     secretMessage += char;
   }
-  output.innerText = secretMessage;
+  textArea.value = secretMessage;
 }
 
 function descryt() {
@@ -50,6 +48,5 @@ function descryt() {
     let regex = new RegExp(_old_, "g");
     content = content.replace(regex, _new_);
   }
-  textArea.value = '';
-  output.innerText = content;
+  textArea.value = content;
 }
