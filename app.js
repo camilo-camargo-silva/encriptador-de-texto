@@ -13,13 +13,13 @@ descrytor.addEventListener('click', descryt)
 
 copy.addEventListener('click', () => {
     try {
-      navigator.clipboard.writeText(textArea.textContent);
+      navigator.clipboard.writeText(textArea.value);
       alert('Contenido copiado al portapapeles');
     } catch (err) {
       alert('Error al copiar, la función no está permitida en navegador móvil.');
       return;
     }
-  textArea.innerText = '';
+  textArea.value = '';
 })
 
 function encrypt(text) {
